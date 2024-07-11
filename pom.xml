@@ -6,7 +6,7 @@
 
     <groupId>com.opsmx</groupId>
     <artifactId>message-service</artifactId>
-    <version>${pluginVersion}</version>
+    <version>test123</version>
     <packaging>jar</packaging>
 
     <name>message-service</name>
