@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConditionalOnExpression("${message-broker.enabled:true}")
 @ConditionalOnProperty(value = "message-broker.endpoint.name", havingValue = CamelConstants.rabbitmq)
-public class RabbitMQConfig implements CamelRouteConfig{
+public class RabbitMQMessageConfig implements CamelRouteConfig{
 
     @Autowired
     private MessageBrokerConfiguration messageBrokerConfiguration;
