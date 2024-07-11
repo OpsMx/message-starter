@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Configuration;
 @Data
 @Configuration
 @ConfigurationProperties(prefix = "message-broker")
-@EnableConfigurationProperties({MessageBrokerProperties.class, MessageBrokerProperties.Endpoint.class})
-public class MessageBrokerProperties {
+@EnableConfigurationProperties({MessageBrokerConfiguration.class, MessageBrokerConfiguration.Endpoint.class})
+public class MessageBrokerConfiguration {
 
     private String username;
     private String password;

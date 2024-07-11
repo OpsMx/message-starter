@@ -12,15 +12,15 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig implements CamelRouteConfig{
 
     @Autowired
-    private MessageBrokerProperties messageBrokerProperties;
+    private MessageBrokerConfiguration messageBrokerConfiguration;
 
     @Override
     public String configure(String exchange, String queueName){
-        return messageBrokerProperties.getEndpoint().getName()+":"+exchange+"?queue="
+        return messageBrokerConfiguration.getEndpoint().getName()+":"+exchange+"?queue="
                 +queueName+"-audit"+"&autoDelete=false&routingKey="
                 +queueName+"-audit"+"&declare=false&durable=true&exchangeType=direct&hostname="
-                +messageBrokerProperties.getHost()+"&portNumber="+messageBrokerProperties.getPort()
-                +"&username="+messageBrokerProperties.getUsername()+"&password="+messageBrokerProperties.getPassword();
+                + messageBrokerConfiguration.getHost()+"&portNumber="+ messageBrokerConfiguration.getPort()
+                +"&username="+ messageBrokerConfiguration.getUsername()+"&password="+ messageBrokerConfiguration.getPassword();
 
     }
 }
