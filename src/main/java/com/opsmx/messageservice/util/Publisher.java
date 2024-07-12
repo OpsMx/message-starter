@@ -10,7 +10,7 @@ public class Publisher {
     @Autowired
     private static ProducerTemplate producerTemplate;
 
-    private static Logger log;
+    private static final Logger log;
 
     static {
         log = LoggerFactory.getLogger(Publisher.class);
