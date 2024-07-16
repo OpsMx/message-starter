@@ -20,25 +20,17 @@ import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @Configuration
-//@EnableAutoConfiguration
 @ConditionalOnExpression("${message-broker.enabled:true}")
-//@ComponentScan(com.opsmx.messageservice.config.AuditRouteConfiguration.class)
 @Import(AuditRouteConfiguration.class)
 public class MessageServiceCamelConfig {
 
     @Autowired
     List<RouteBuilder> routeBuilders;
 
-//    @Autowired
-//    AuditRouteConfiguration auditRouteConfiguration;
-
     @Bean
     public CamelContext camelContext() throws Exception {
 
-//        AuditRouteConfiguration auditRouteConfiguration = new AuditRouteConfiguration();
         CamelContext camelContext = new DefaultCamelContext();
-//        routeBuilders = new ArrayList<>();
-//        routeBuilders.add(auditRouteConfiguration);
         routeBuilders.stream().forEach(route -> {
             log.info("Using route configuration : {},{}",route.getClass().getName(), route.getClass().getCanonicalName());
             try {
