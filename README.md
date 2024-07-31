@@ -1,5 +1,5 @@
 # opsmx-message-starter
-This module contains common files to make messaging to and from rabbitMQ possible.
+This module contains common files to make messaging to and from rabbitMQ possible and a logging method for publishing logs in application.
 After importing this one just needs to define route configuration between Apache Camel endpoints and RabbitMQ endpoints.
 
 To Use this:
