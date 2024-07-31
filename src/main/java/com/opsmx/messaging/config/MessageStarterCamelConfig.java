@@ -1,11 +1,9 @@
-package com.opsmx.messageservice.config;
+package com.opsmx.messaging.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 
@@ -14,7 +12,6 @@ import org.apache.camel.ProducerTemplate;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.springframework.context.annotation.Import;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -22,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 @ConditionalOnExpression("${message-broker.enabled:true}")
 @Import(AuditRouteConfiguration.class)
-public class MessageServiceCamelConfig {
+public class MessageStarterCamelConfig {
 
     @Autowired
     List<RouteBuilder> routeBuilders;
