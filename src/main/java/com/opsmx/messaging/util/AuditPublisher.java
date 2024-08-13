@@ -6,6 +6,7 @@ import com.opsmx.messaging.dto.AuditMessageDTO;
 import org.apache.camel.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Import(MessageStarterCamelConfig.class)
-@Component
+@Configuration
 public class AuditPublisher {
 
     @Autowired
