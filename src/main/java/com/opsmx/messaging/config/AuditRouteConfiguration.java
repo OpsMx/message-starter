@@ -12,8 +12,11 @@ import org.springframework.context.annotation.Import;
 @ConditionalOnExpression("${message-broker.enabled:true}")
 //@Context(MessageStarterRabbitMQConfig.class)
 @ComponentScan
+@Import(MessageStarterMessageBrokerProperties.class)
 public class AuditRouteConfiguration extends RouteBuilder {
 
+    @Autowired
+    private MessageStarterMessageBrokerProperties messageStarterMessageBrokerProperties;
 
     @Autowired
     private MessageStarterRabbitMQConfig messageStarterRabbitMQConfig;
@@ -23,7 +26,16 @@ public class AuditRouteConfiguration extends RouteBuilder {
 
                 from(CamelConstants.camelAuditEndpoint)
                 .id(CamelConstants.auditQueue)
-                .to(messageStarterRabbitMQConfig.configure(CamelConstants.auditExchange, CamelConstants.auditQueueName))
+                .to(getRabbitMQEndPoint(CamelConstants.auditExchange, CamelConstants.auditQueueName))
                 .end();
+    }
+
+    public String getRabbitMQEndPoint(String exchange, String queueName){
+        return messageStarterMessageBrokerProperties.getEndpoint().getName()+":"+exchange+"?queue="
+                +queueName+"-audit"+"&autoDelete=false&routingKey="
+                +queueName+"-audit"+"&declare=false&durable=true&exchangeType=direct&hostname="
+                + messageStarterMessageBrokerProperties.getHost()+"&portNumber="+ messageStarterMessageBrokerProperties.getPort()
+                +"&username="+ messageStarterMessageBrokerProperties.getUsername()+"&password="+ messageStarterMessageBrokerProperties.getPassword();
+
     }
 }
