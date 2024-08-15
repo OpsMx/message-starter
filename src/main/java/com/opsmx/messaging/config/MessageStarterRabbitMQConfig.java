@@ -21,8 +21,8 @@ public class MessageStarterRabbitMQConfig implements MessageStarterCamelRouteCon
     @Override
     public String configure(String exchange, String queueName){
         return messageStarterMessageBrokerProperties.getEndpoint().getName()+":"+exchange+"?queue="
-                +queueName+"-audit"+"&autoDelete=false&routingKey="
-                +queueName+"-audit"+"&declare=false&durable=true&exchangeType=direct&hostname="
+                +queueName+"&autoDelete=false&routingKey="
+                +queueName+"&declare=false&durable=true&exchangeType=direct&hostname="
                 + messageStarterMessageBrokerProperties.getHost()+"&portNumber="+ messageStarterMessageBrokerProperties.getPort()
                 +"&username="+ messageStarterMessageBrokerProperties.getUsername()+"&password="+ messageStarterMessageBrokerProperties.getPassword();
 
