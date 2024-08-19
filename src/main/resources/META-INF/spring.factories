@@ -1,6 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.opsmx.messaging.config.MessageStarterCamelConfig
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.opsmx.messaging.config.MessageStarterCamelConfig
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.opsmx.messaging.config.AuditRouteConfiguration
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.opsmx.messaging.config.MessageStarterMessageBrokerProperties
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.opsmx.messaging.config.MessageStarterRabbitMQConfig
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.opsmx.messaging.config.AuditPublisherConfig
