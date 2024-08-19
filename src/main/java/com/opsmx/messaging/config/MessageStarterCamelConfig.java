@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 //@ComponentScan
 public class MessageStarterCamelConfig {
 
-    @Autowired
+    @Autowired(required = false)
     List<RouteBuilder> routeBuilders;
 
     @Bean
