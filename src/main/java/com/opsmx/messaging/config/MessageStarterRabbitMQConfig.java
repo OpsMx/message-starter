@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Import;
 @ConditionalOnExpression("${message-broker.enabled:true}")
 @ConditionalOnProperty(value = "message-broker.endpoint.name", havingValue = CamelConstants.rabbitmq)
 //@Import(MessageStarterMessageBrokerProperties.class)
-@ComponentScan
+//@ComponentScan
 public class MessageStarterRabbitMQConfig implements MessageStarterCamelRouteConfig {
 
     @Autowired
