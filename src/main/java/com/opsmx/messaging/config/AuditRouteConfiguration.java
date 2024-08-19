@@ -29,7 +29,7 @@ public class AuditRouteConfiguration extends RouteBuilder {
 //                .id(CamelConstants.auditQueue)
 //                .to(getRabbitMQEndPoint(CamelConstants.auditExchange, CamelConstants.auditQueueName))
 //                .end();
-        from("").to("").end();
+        from("direct:test").log("Test Route Configuration");
     }
 
 //    public String getRabbitMQEndPoint(String exchange, String queueName){
