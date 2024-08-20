@@ -32,4 +32,7 @@ public class AuditMessageDTO {
     String message;
     String source;
     String cdTool;
+
+    public AuditMessageDTO() {
+    }
 }
