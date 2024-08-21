@@ -6,6 +6,6 @@ public interface CamelConstants {
     String auditQueue = "audit-queue";
     String auditQueueName = "audit-info";
     String auditExchange = "audit.events";
-    String camelAuditEndpoint = "direct:auditInfo";
+    String camelAuditEndpoint = "direct:auditEvent";
 
 }
