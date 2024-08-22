@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 @ConditionalOnExpression("${message-broker.enabled:true}")
 public class MessageStarterCamelConfig {
 
-    @Autowired(required = false)
+    @Autowired
     List<RouteBuilder> routeBuilders;
 
     @Bean
