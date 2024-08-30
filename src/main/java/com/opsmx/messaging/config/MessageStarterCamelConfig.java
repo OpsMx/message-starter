@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 @ConditionalOnExpression("${message-broker.enabled:true}")
 //@Import(AuditRouteConfiguration.class)
-//@ComponentScan
+@ComponentScan
 public class MessageStarterCamelConfig {
 
     @Autowired
