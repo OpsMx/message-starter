@@ -30,8 +30,7 @@ public class AuditPublisher {
             AuditMessageDTO auditMessageDTO = new AuditMessageDTO(resourceName, resourceType, action, status, entityName, entityType, message, source, cdTool);
             String serializedAuditMessage = gson.toJson(auditMessageDTO, AuditMessageDTO.class);
             log.info("Publishing audit event to endpoint : {} the message: {}", CamelConstants.camelAuditEndpoint, serializedAuditMessage);
-//            producerTemplate.sendBody(config.configure(CamelConstants.auditExchange, CamelConstants.auditQueueName), serializedAuditMessage);
-            producerTemplate.sendBody(CamelConstants.camelAuditEndpoint, serializedAuditMessage);
+            producerTemplate.sendBody(config.configure(CamelConstants.auditExchange, CamelConstants.auditQueueName), serializedAuditMessage);
         } catch (Exception e) {
             log.error("Error publishing audit event: {}", e);
         }
