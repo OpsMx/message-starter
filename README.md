@@ -21,13 +21,4 @@ To Use this:
  method which takes exchange name and queue name as parameters and returns and RabbitMQ uri as string.
 
 
-3) For publishing the module produces a `org.apache.camel.ProducerTemplate` bean which you can autowire in your publisher class and use it to publish a message to an endpoint.
-
-
-4) Already a Route Configuration for audit events is present. The events published to the below queue will be consumed by oes-audit-service and persisted to auditDB and hence can
-   be used to publish audit related events.
-   ```
-        exchange name - audit.events
-        queue id -      audit-queue
-        queue name -    audit-info
-   ```
+3) For publishing the module produces a `org.apache.camel.ProducerTemplate` bean which you can autowire in your publisher class and use it to publish a message to an endpoint. 
