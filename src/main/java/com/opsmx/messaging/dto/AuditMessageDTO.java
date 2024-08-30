@@ -8,6 +8,7 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class AuditMessageDTO {
 
     @NotBlank
