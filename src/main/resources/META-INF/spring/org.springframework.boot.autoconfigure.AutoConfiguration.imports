@@ -1,4 +1,0 @@
-com.opsmx.messageservice.config.MessageServiceCamelConfig
-com.opsmx.messageservice.config.AuditRouteConfiguration
-com.opsmx.messageservice.config.MessageServiceMessageBrokerProperties
-com.opsmx.messageservice.config.MessageServiceRabbitMQConfig
