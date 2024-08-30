@@ -10,11 +10,9 @@ import org.springframework.context.annotation.Import;
 
 import lombok.extern.slf4j.Slf4j;
 import com.google.gson.Gson;
-import org.springframework.stereotype.Component;
 
 @Slf4j
 @Import(MessageStarterCamelConfig.class)
-@Component
 public class AuditPublisher {
 
     @Autowired
