@@ -9,18 +9,18 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConditionalOnExpression("${message-broker.enabled:true}")
 @ConditionalOnProperty(value = "message-broker.endpoint.name", havingValue = CamelConstants.rabbitmq)
-public class MessageServiceRabbitMQConfig implements MessageServiceCamelRouteConfig {
+public class RabbitMQMessageConfig implements CamelRouteConfig{
 
     @Autowired
-    private MessageServiceMessageBrokerProperties messageServiceMessageBrokerProperties;
+    private MessageBrokerConfiguration messageBrokerConfiguration;
 
     @Override
     public String configure(String exchange, String queueName){
-        return messageServiceMessageBrokerProperties.getEndpoint().getName()+":"+exchange+"?queue="
+        return messageBrokerConfiguration.getEndpoint().getName()+":"+exchange+"?queue="
                 +queueName+"-audit"+"&autoDelete=false&routingKey="
                 +queueName+"-audit"+"&declare=false&durable=true&exchangeType=direct&hostname="
-                + messageServiceMessageBrokerProperties.getHost()+"&portNumber="+ messageServiceMessageBrokerProperties.getPort()
-                +"&username="+ messageServiceMessageBrokerProperties.getUsername()+"&password="+ messageServiceMessageBrokerProperties.getPassword();
+                + messageBrokerConfiguration.getHost()+"&portNumber="+ messageBrokerConfiguration.getPort()
+                +"&username="+ messageBrokerConfiguration.getUsername()+"&password="+ messageBrokerConfiguration.getPassword();
 
     }
 }
