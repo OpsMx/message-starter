@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @ConditionalOnExpression("${message-broker.enabled:true}")
-@Import(MessageStarterCamelRouteConfig.class)
+@Import(MessageStarterRabbitMQConfig.class)
 public class AuditRouteConfiguration extends RouteBuilder {
 
 
