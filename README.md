@@ -14,6 +14,7 @@ To Use this:
            </dependency>
            ```
         
+
 2) Define Route configuration file in your repo to define endpoints to publish or a message consumer bean.
    It should extend `org.apache.camel.builder.RouteBuilder` for it to be automatically picked by message-starter module and configure Apache Camel accordingly.
   See `com.opsmx.messaging.config.TestRouteConfiguration` for an example. While defining the route configuration you will need to construct
@@ -21,15 +22,10 @@ To Use this:
  method which takes exchange name and queue name as parameters and returns and RabbitMQ uri as string.
 
 
-3) For publishing the module produces a `org.apache.camel.ProducerTemplate` bean which you can autowire in your publisher class and use it to publish a message to an endpoint.
+3) Finally, set attribute to your `@SpringBootApplication` annotation to scan packages of this library: `@SpringBootApplication(scanBasePackages = "com.opsmx")`
 
 
-4) Already a Route Configuration for audit events is present. The events published to the below queue will be consumed by oes-audit-service and persisted to auditDB. 
-   Audit related events can be published to the correspnding camel endpoint.
+4) For publishing, the module produces a `org.apache.camel.ProducerTemplate` bean which you can autowire in your publisher class and use it to publish a message to an endpoint.
 
-   ```
-        camel endpoint - direct:auditInfo
-        exchange name -  audit.events
-        queue id -       audit-queue
-        queue name -     audit-info
-   ```
+
+5) `AuditPublisher` is a class that contains a static function `sendToAudit`, it can be used to send audit events for persistence to camelEndpoint: `direct:auditEvent`
