@@ -17,9 +17,9 @@ public class AuditRouteConfiguration extends RouteBuilder {
 
     @Autowired
     private MessageStarterMessageBrokerProperties messageStarterMessageBrokerProperties;
-//
-//    @Autowired
-//    private MessageStarterRabbitMQConfig messageStarterRabbitMQConfig;
+
+    @Autowired
+    private MessageStarterRabbitMQConfig messageStarterRabbitMQConfig;
 
     @Override
     public void configure() throws Exception{
