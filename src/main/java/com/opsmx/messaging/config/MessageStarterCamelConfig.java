@@ -41,7 +41,6 @@ public class MessageStarterCamelConfig {
         camelContext.getShutdownStrategy().setTimeout(5);
         camelContext.getShutdownStrategy().setTimeUnit(TimeUnit.SECONDS);
         camelContext.start();
-
         return camelContext;
     }
 
