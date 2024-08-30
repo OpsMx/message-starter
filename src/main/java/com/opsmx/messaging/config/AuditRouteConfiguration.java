@@ -9,19 +9,19 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @ConditionalOnExpression("${message-broker.enabled:true}")
-@Import(MessageStarterRabbitMQConfig.class)
+@Import(MessageStarterCamelRouteConfig.class)
 public class AuditRouteConfiguration extends RouteBuilder {
 
 
     @Autowired
-    private MessageStarterRabbitMQConfig messageStarterRabbitMQConfig;
+    private MessageStarterCamelRouteConfig messageStarterCamelRouteConfig;
 
     @Override
     public void configure() throws Exception{
 
                 from(CamelConstants.camelAuditEndpoint)
                 .id(CamelConstants.auditQueue)
-                .to(messageStarterRabbitMQConfig.configure(CamelConstants.auditExchange, CamelConstants.auditQueueName))
+                .to(messageStarterCamelRouteConfig.configure(CamelConstants.auditExchange, CamelConstants.auditQueueName))
                 .end();
     }
 }
