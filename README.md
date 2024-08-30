@@ -24,12 +24,10 @@ To Use this:
 3) For publishing the module produces a `org.apache.camel.ProducerTemplate` bean which you can autowire in your publisher class and use it to publish a message to an endpoint.
 
 
-4) Already a Route Configuration for audit events is present. The events published to the below queue will be consumed by oes-audit-service and persisted to auditDB. 
-   Audit related events can be published to the correspnding camel endpoint.
-
+4) Already a Route Configuration for audit events is present. The events published to the below queue will be consumed by oes-audit-service and persisted to auditDB and hence can
+   be used to publish audit related events.
    ```
-        camel endpoint - direct:auditInfo
-        exchange name -  audit.events
-        queue id -       audit-queue
-        queue name -     audit-info
+        exchange name - audit.events
+        queue id -      audit-queue
+        queue name -    audit-info
    ```
