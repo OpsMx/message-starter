@@ -1,4 +1,4 @@
-package com.opsmx.messaging.constants;
+package com.opsmx.messageservice.constants;
 
 public interface CamelConstants {
 

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.opsmx</groupId>
-    <artifactId>opsmx-message-starter</artifactId>
+    <artifactId>message-service</artifactId>
     <version>${pluginVersion}</version>
     <packaging>jar</packaging>
 

@@ -1,4 +1,4 @@
-package com.opsmx.messaging.config;
+package com.opsmx.messageservice.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -9,15 +9,16 @@ import org.springframework.context.annotation.Primary;
 @Data
 @Configuration
 @ConfigurationProperties(prefix = "message-broker")
-@EnableConfigurationProperties({MessageStarterMessageBrokerProperties.class, MessageStarterMessageBrokerProperties.Endpoint.class})
+@EnableConfigurationProperties({MessageServiceMessageBrokerProperties.class, MessageServiceMessageBrokerProperties.Endpoint.class})
 @Primary
-public class MessageStarterMessageBrokerProperties {
+public class MessageServiceMessageBrokerProperties {
 
     private String username;
     private String password;
     private String host;
     private String port;
     private Endpoint endpoint;
+//    private List<ConsumerRouteProperty> consumerRoutes;
 
     @Data
     @Configuration
@@ -25,4 +26,16 @@ public class MessageStarterMessageBrokerProperties {
     public static class Endpoint {
         private String name;
     }
+//
+//    @Data
+//    @Configuration
+////    @ConfigurationProperties(prefix = "message-broker.endpoint")
+//    public static class ConsumerRouteProperty {
+//        private String queueName;
+//        private String queueId;
+//        private String handlerBean;
+//        private String exchange;
+//    }
+
+
 }

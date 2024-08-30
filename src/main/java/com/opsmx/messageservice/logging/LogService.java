@@ -1,4 +1,4 @@
-package com.opsmx.messaging.logging;
+package com.opsmx.messageservice.logging;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.Level;
