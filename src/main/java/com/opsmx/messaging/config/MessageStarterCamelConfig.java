@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 
@@ -19,8 +18,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @Configuration
 @ConditionalOnExpression("${message-broker.enabled:true}")
-//@Import(AuditRouteConfiguration.class)
-@ComponentScan
+@Import(AuditRouteConfiguration.class)
 public class MessageStarterCamelConfig {
 
     @Autowired
