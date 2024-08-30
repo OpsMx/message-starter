@@ -32,9 +32,10 @@ public class AuditRouteConfiguration extends RouteBuilder {
 
     public String getRabbitMQEndPoint(String exchange, String queueName){
         return messageStarterMessageBrokerProperties.getEndpoint().getName()+":"+exchange+"?queue="
-                +queueName+"&autoDelete=false&routingKey="
-                +queueName+"&declare=false&durable=true&exchangeType=direct&hostname="
+                +queueName+"-audit"+"&autoDelete=false&routingKey="
+                +queueName+"-audit"+"&declare=false&durable=true&exchangeType=direct&hostname="
                 + messageStarterMessageBrokerProperties.getHost()+"&portNumber="+ messageStarterMessageBrokerProperties.getPort()
                 +"&username="+ messageStarterMessageBrokerProperties.getUsername()+"&password="+ messageStarterMessageBrokerProperties.getPassword();
+
     }
 }
