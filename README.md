@@ -16,7 +16,7 @@ To Use this:
         
 2) Define Route configuration file in your repo to define endpoints to publish or a message consumer bean.
    It should extend `org.apache.camel.builder.RouteBuilder` for it to be automatically picked by message-starter module and configure Apache Camel accordingly.
-  See `com.opsmx.messaging.config.TestRouteConfiguration` for an example. While defining the route configuration you will need to construct
+  See `com.opsmx.messaging.config.AuditRouteConfiguration` for an example. While defining the route configuration you will need to construct
  RabbitMQ endpoint for Camel to use, instead of defining your own method optionally you can make use of `com.opsmx.messaging.config.MessageStarterCamelRouteConfig.configure`
  method which takes exchange name and queue name as parameters and returns and RabbitMQ uri as string.
 

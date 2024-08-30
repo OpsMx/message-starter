@@ -11,12 +11,12 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @ConditionalOnExpression("${message-broker.enabled:true}")
-//@ComponentScan
-//@Import(MessageStarterMessageBrokerProperties.class)
+@ComponentScan
+@Import(MessageStarterMessageBrokerProperties.class)
 public class TestRouteConfiguration extends RouteBuilder {
-//
-//    @Autowired
-//    private MessageStarterRabbitMQConfig messageStarterRabbitMQConfig;
+
+    @Autowired
+    private MessageStarterRabbitMQConfig messageStarterRabbitMQConfig;
 
     @Override
     public void configure() throws Exception{
