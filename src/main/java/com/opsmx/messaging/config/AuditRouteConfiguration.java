@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Import;
 @ConditionalOnExpression("${message-broker.enabled:true}")
 @ComponentScan
 @Import(MessageStarterMessageBrokerProperties.class)
-public class TestRouteConfiguration extends RouteBuilder {
+public class AuditRouteConfiguration extends RouteBuilder {
 
     @Autowired
     private MessageStarterRabbitMQConfig messageStarterRabbitMQConfig;
@@ -21,11 +21,10 @@ public class TestRouteConfiguration extends RouteBuilder {
     @Override
     public void configure() throws Exception{
 
-//        from(CamelConstants.camelAuditEndpoint)
-//                .id(CamelConstants.auditQueue)
-//                .to(messageStarterRabbitMQConfig.configure(CamelConstants.auditExchange, CamelConstants.auditQueueName))
-//                .end();
-        from("direct:test").log("Test Route Configuration");
+        from(CamelConstants.camelAuditEndpoint)
+                .id(CamelConstants.auditQueue)
+                .to(messageStarterRabbitMQConfig.configure(CamelConstants.auditExchange, CamelConstants.auditQueueName))
+                .end();
     }
 
 }
