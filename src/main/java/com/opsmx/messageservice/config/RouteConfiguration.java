@@ -10,6 +10,9 @@ import org.springframework.context.annotation.Configuration;
 @ConditionalOnExpression("${message-broker.enabled:true}")
 public class RouteConfiguration extends RouteBuilder {
 
+//    @Autowired
+//    MessageConfig messageConfig;
+
 
     @Autowired
     private CamelRouteConfig camelRouteConfig;

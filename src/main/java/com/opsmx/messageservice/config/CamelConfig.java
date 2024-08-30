@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @Configuration
 @ConditionalOnExpression("${message-broker.enabled:true}")
-public class CamelMessageConfig {
+public class CamelConfig {
 
     @Autowired
     RouteConfiguration routeConfiguration;
